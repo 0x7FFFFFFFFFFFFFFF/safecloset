@@ -61,6 +61,7 @@ make_actions! {
     ConfirmEntryRemoval "Confirm Entry Removal" key!(y),
     Copy "*C*opy" key!(ctrl-C),
     Cut "*C*ut" key!(ctrl-X),
+    DuplicateEntry "*D*uplicate Entry" key!(ctrl-D),
     EditClosetComments "Edit Closet Comments",
     GroupMatchingEntries "Group Matching Entries",
     Help "Help" key!('?'),

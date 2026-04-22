@@ -11,7 +11,7 @@ SafeCloset is written by Denys Séguret. Source code and documentation can be fo
 
 SafeCloset stores secrets in drawers. A drawer may be either top-level, or hidden in another drawer. Each drawer is protected by a passphrase.
 
-SafeCloset leaves after 120 seconds of inactivity.
+SafeCloset leaves after 30 minutes of inactivity.
 
 ## Keyboard actions
 
@@ -39,6 +39,7 @@ The *^* symbol in SafeCloset means that the *control* key must be pressed.
 | *i* or *insert* | Start editing the selected name or value, cursor at start
 | *a* | Start editing the selected name or value, cursor at end
 | *d* | Remove the selected entry (with confirmation)
+| *^d* | Duplicate the selected entry
 | *^c* | Copy the selection (or the entire field if not edited)
 | *^x* | Cut the selection
 | *^v* | Paste

@@ -79,7 +79,7 @@ pub(crate) use {
     view::*,
 };
 
-pub const MAX_INACTIVITY: Duration = Duration::from_secs(120);
+pub const MAX_INACTIVITY: Duration = Duration::from_secs(1800);
 
 pub trait ScreenWriter {
     fn go_to(

@@ -650,6 +650,21 @@ impl AppState {
                     ds.edit_entry_name_by_line(idx, EditionPos::Start);
                 }
             }
+            Action::DuplicateEntry => {
+                if let Some(ds) = &mut self.drawer_state {
+                    if let Some(line) = ds.focus.line() {
+                        if let Some(idx) = ds.listed_entry_idx(line) {
+                            let entry = ds.drawer.content.entries[idx].clone();
+                            let new_idx = idx + 1;
+                            ds.drawer.content.entries.insert(new_idx, entry);
+                            ds.increment_edit_count();
+                            ds.update_search();
+                            let new_line = ds.entry_line(new_idx).unwrap_or(line + 1);
+                            ds.focus = DrawerFocus::NameSelected { line: new_line };
+                        }
+                    }
+                }
+            }
             Action::RemoveLine => {
                 self.propose_entry_removal();
             }
